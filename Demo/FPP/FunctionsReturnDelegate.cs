@@ -10,16 +10,16 @@ namespace Demo.FPP
 	{
 		public static Action DelegateAction()
 		{
-			return delegate () { Console.WriteLine("Hello Route"); };
+			return () => Console.WriteLine("Hello Route");
 		}
 		public static Predicate<int> DelegatePredicate()
 		{
-			return delegate(int X) { return X > 0;  };
+			return x => x > 0;
 		}
 
 		public static Func<char[] , string> DelegateFunc()
 		{
-			return delegate (char[] chars) { return new string(chars);};
+			return chars => new string(chars);
 		}
 
 	}
