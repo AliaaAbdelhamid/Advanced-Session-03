@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace Demo.Example02
 {
-	// Non - Generic Delegate 
-	//public delegate bool SortingStrategyFuncDelegate(int A, int B);
-
 	// Generic Delegate 
-	public delegate Tout SortingStrategyFuncDelegate<in T1, in T2, out Tout>(T1 A, T2 B);
+	//public delegate Tout SortingStrategyFuncDelegate<in T1, in T2, out Tout>(T1 A, T2 B);
 	internal static class SortingAlgorithms<T>
 	{
-		public static void BubbleSort(T[] Arr, SortingStrategyFuncDelegate<T , T , bool>? sortingStrategy)
+		public static void BubbleSort(T[] Arr, Func<T , T , bool>? sortingStrategy)
 		{
 			if (Arr?.Length > 0 && sortingStrategy is not null)
 				for (int i = 0; i < Arr.Length; i++)

@@ -1,41 +1,42 @@
-﻿using Demo.Example01;
+﻿using Demo.BuiltInDelegateExample;
+using Demo.Example01;
 using Demo.Example02;
 using Demo.Example03;
 
 namespace Demo
 {
-	// Step 0 : Defining a Delegate
-	public delegate int StringFuncDelegate(string s);
-    // New Delegate [Class]
-    // Reference From This Delegate Can Refer To 
-    // One Function Or More [Pointer To Function]
-    // This Functions May Be Static Function Or Non Static Function 
-    // But These Function Must Be With The Same Signature Of Delegate
-    // Regardless Function Name and Access Modifier 
+	//// Step 0 : Defining a Delegate
+	//public delegate int StringFuncDelegate(string s);
+	//// New Delegate [Class]
+	//// Reference From This Delegate Can Refer To 
+	//// One Function Or More [Pointer To Function]
+	//// This Functions May Be Static Function Or Non Static Function 
+	//// But These Function Must Be With The Same Signature Of Delegate
+	//// Regardless Function Name and Access Modifier 
 
-    internal class Program
-    {    
-        static void Main(string[] args)
-        {
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
 			#region Example 01
-			//         // Step 01 : Declare reference From Delegate 
-			//         StringFuncDelegate? stringFunc;
+			//// Step 01 : Declare reference From Delegate 
+			//Func<string, int>? stringFunc;
 
 			//// Step 02 : Initialize Reference From Delegate[Pointer To Function]
 
-			//         stringFunc = StringFunctions.GetCountOfUpperCaseChar; // Syntax Sugar
+			//stringFunc = StringFunctions.GetCountOfUpperCaseChar; // Syntax Sugar
 
-			//         stringFunc += StringFunctions.GetCountOfLowerCaseChar;
-			//         // Add New Reference For Function To Reference From Delegate 
+			//stringFunc += StringFunctions.GetCountOfLowerCaseChar;
+			//// Add New Reference For Function To Reference From Delegate 
 
-			//         stringFunc -= StringFunctions.GetCountOfUpperCaseChar;
+			//stringFunc -= StringFunctions.GetCountOfUpperCaseChar;
 			//// Remove Reference Of GetCountOfUpperCaseChar() Method
 
 			//// Step 03 : Use Delegate Reference [Invoke Method]
 
 			//int Result = stringFunc?.Invoke("RoutE") ?? 0;
 
-			//         //Result = stringFunc("RoutE");
+			////Result = stringFunc("RoutE");
 			//if (stringFunc != null)
 			//	Result = stringFunc("RoutE");
 			//else
@@ -50,7 +51,7 @@ namespace Demo
 
 			//SortingAlgorithms<int>.BubbleSort(Numbers, SortingStrategy.SortAsc); // To Sort In Asc
 
-			//SortingStrategyFuncDelegate<int , int , bool>? sortingStrategy01 = SortingStrategy.SortDesc;
+			//Func<int, int, bool>? sortingStrategy01 = SortingStrategy.SortDesc;
 
 			//SortingAlgorithms<int>.BubbleSort(Numbers, sortingStrategy01); // To Sort In Desc
 
@@ -62,7 +63,7 @@ namespace Demo
 
 			//string[] Names = ["Omar", "Mohamed", "Amr", "Salma"];
 
-			//SortingStrategyFuncDelegate<string ,string, bool> sortingStrategy02 = SortingStrategy.SortAsc;
+			//Func<string, string, bool> sortingStrategy02 = SortingStrategy.SortAsc;
 
 			//SortingAlgorithms<string>.BubbleSort(Names, sortingStrategy02);
 
@@ -76,13 +77,13 @@ namespace Demo
 
 			//List<int> Numbers = Enumerable.Range(1, 100).ToList();
 
-			//List<int> OddNumbers = FilterLists.FindElements(Numbers , FiltersOfList.CheckOdd);
+			//List<int> OddNumbers = FilterLists.FindElements(Numbers, FiltersOfList.CheckOdd);
 
-			//FilterListFuncDelegate<int> filterList = FiltersOfList.CheckEven;
+			//Predicate<int> filterList = FiltersOfList.CheckEven;
 
-			//List<int> EvenNumbers = FilterLists.FindElements(Numbers , filterList);
+			//List<int> EvenNumbers = FilterLists.FindElements(Numbers, filterList);
 
-			//List<int> NumbersDivisableBy7 = FilterLists.FindElements(Numbers , FiltersOfList.DivisibleBy7);
+			//List<int> NumbersDivisableBy7 = FilterLists.FindElements(Numbers, FiltersOfList.DivisibleBy7);
 
 			//foreach (int item in NumbersDivisableBy7) Console.Write($"{item} ");
 			//// 7 14 21 28 35 42 49 56 63 70 77 84 91 98
@@ -90,13 +91,36 @@ namespace Demo
 
 			//List<string> Names = ["Ahmed", "Aya", "Khaled", "Rawan", "Amr", "Youssef"];
 
-			//List<string> NamesWithLengthMoreThanFour =  FilterLists.FindElements<string>(Names, FiltersOfList.CheckLengthMoreThanFour);
-		
+			//List<string> NamesWithLengthMoreThanFour = FilterLists.FindElements<string>(Names, FiltersOfList.CheckLengthMoreThanFour);
+
 			//foreach (string item in NamesWithLengthMoreThanFour) Console.Write($"{item} ");
 			//// Ahmed Khaled Rawan Youssef
 
 
 			#endregion
+
+			#region Built In Delegate [Func , Predicate , Action]
+
+			//Action action1 = TestBuiltInDelegate.Print;
+			//action1.Invoke(); // Hello Route
+			//action1(); // Hello Route
+
+
+			//Action<string> action2 = TestBuiltInDelegate.Print;
+			//action2.Invoke("Omar"); // Hello Omar
+			//action2("Omar");// Hello Omar
+
+
+			//Func<int, string> func = TestBuiltInDelegate.Casting;
+			//string Number = func.Invoke(10); // 10
+			//Number = func(10); // 10
+
+			//Predicate<int> predicate = TestBuiltInDelegate.CheckPositive;
+			//bool Result = predicate.Invoke(10); // True 
+			//Result = predicate(10); // True 
+
+			#endregion
+
 		}
 	}
 }

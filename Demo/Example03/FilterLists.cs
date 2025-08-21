@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Demo.Example03
 {
-	public delegate bool FilterListFuncDelegate<T>(T number);
+	//public delegate bool FilterListFuncDelegate<T>(T number);
 	internal static class FilterLists
 	{
-		public static List<T> FindElements<T>(List<T> elements, FilterListFuncDelegate<T>? filterList)
+		public static List<T> FindElements<T>(List<T> elements, Predicate<T>? filterList)
 		{
 			List<T> Result = new List<T>();
 			if (elements?.Count > 0 && filterList is not null)
