@@ -8,9 +8,9 @@ namespace Demo.BuiltInDelegateExample
 {
 	internal static class TestBuiltInDelegate
 	{
-		public static bool CheckPositive(int number) { return number > 0; }
-		public static string Casting (int number) { return number.ToString(); }
-		public static void Print() { Console.WriteLine("Hello Route"); }
-		public static void Print(string name) { Console.WriteLine($"Hello {name}"); }
+		//public static bool CheckPositive(int number) { return number > 0; }
+		//public static string Casting (int number) { return number.ToString(); }
+		//public static void Print() { Console.WriteLine("Hello Route"); }
+		//public static void Print(string name) { Console.WriteLine($"Hello {name}"); }
 	}
 }

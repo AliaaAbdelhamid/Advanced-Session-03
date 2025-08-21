@@ -2,6 +2,8 @@
 using Demo.Example01;
 using Demo.Example02;
 using Demo.Example03;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Demo
 {
@@ -116,6 +118,32 @@ namespace Demo
 			//Number = func(10); // 10
 
 			//Predicate<int> predicate = TestBuiltInDelegate.CheckPositive;
+			//bool Result = predicate.Invoke(10); // True 
+			//Result = predicate(10); // True 
+
+			#endregion
+
+			#region Anonymous Method And Lambda Expression
+
+			////Action action1 = delegate { Console.WriteLine("Hello Route"); }; // Anonymous Method 
+			//Action action1 = () => Console.WriteLine("Hello Route");  // Lambda Expression
+			//action1.Invoke(); // Hello Route
+			//action1(); // Hello Route
+
+			////Action<string> action2 = delegate (string name) { Console.WriteLine($"Hello {name}"); }; // Anonymous Method 
+			//Action<string> action2 = name =>  Console.WriteLine($"Hello {name}"); // Lambda Expression
+			//action2.Invoke("Omar"); // Hello Omar
+			//action2("Omar");// Hello Omar
+
+
+			////Func<int, string> func = delegate (int number) { return number.ToString(); }; // Anonymous Method
+			//Func<int, string> func = number => number.ToString();  // Lambda Expression 
+
+			//string Number = func.Invoke(10); // 10
+			//Number = func(10); // 10
+
+			////Predicate<int> predicate = delegate (int number) { return number > 0; }; // Anonymous Method 
+			//Predicate<int> predicate = number => number > 0; // Lambda Expression 
 			//bool Result = predicate.Invoke(10); // True 
 			//Result = predicate(10); // True 
 
