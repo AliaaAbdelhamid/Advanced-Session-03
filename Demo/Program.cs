@@ -2,6 +2,7 @@
 using Demo.Example01;
 using Demo.Example02;
 using Demo.Example03;
+using Demo.FPP;
 using Demo.ListMethods;
 using System.Xml.Linq;
 using static System.Runtime.InteropServices.JavaScript.JSType;
@@ -213,6 +214,35 @@ namespace Demo
 
 			#endregion
 
+			#region Functional Programing Paradigm 
+
+			//FunctionsReturnDelegate.Print(); // Hello Route
+
+			//bool Result = FunctionsReturnDelegate.CheckPositive(10);
+			//Console.WriteLine(Result); // true
+
+			//string str = FunctionsReturnDelegate.ConvertToString(chars);
+			//Console.WriteLine(str); // Route
+
+			//FunctionsReturnDelegate.DelegateAction(); // Do Nothing 
+			//Action action = FunctionsReturnDelegate.DelegateAction();
+			//action.Invoke(); // Hello Route 
+			//FunctionsReturnDelegate.DelegateAction().Invoke(); // Hello Route 
+			//FunctionsReturnDelegate.DelegateAction()(); // Hello Route 
+
+
+			//char[] chars = ['R', 'o', 'u', 't', 'e'];
+			//Func<char[], string> func = FunctionsReturnDelegate.DelegateFunc();
+			//string str = func.Invoke(chars); // Route
+			//str = FunctionsReturnDelegate.DelegateFunc()(chars);
+
+
+			//Predicate<int> predicate = FunctionsReturnDelegate.DelegatePredicate();
+			//bool Flag = predicate.Invoke(-10); // False 
+			//Console.WriteLine(predicate(-10)); // False
+			//Console.WriteLine(FunctionsReturnDelegate.DelegatePredicate()(-10)); // False 
+
+			#endregion
 		}
 	}
 }
