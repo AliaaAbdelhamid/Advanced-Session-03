@@ -8,13 +8,22 @@ namespace Demo.Example02
 {
 	internal static class SortingStrategy
 	{
-		public static bool CompareGreater(int X , int Y)
+		public static bool SortAsc(int X , int Y)
 		{
 			return X > Y;
 		}
-		public static bool CompareLess(int X, int Y)
+		public static bool SortDesc(int X, int Y)
 		{
 			return X < Y;
+		}
+
+		public static bool SortAsc(string? X , string? Y)
+		{
+			return X?.Length > Y?.Length;
+		}
+		public static bool SortDesc(string? X, string? Y)
+		{
+			return X?.Length < Y?.Length;
 		}
 	}
 }

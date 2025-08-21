@@ -44,19 +44,32 @@ namespace Demo
 			#endregion
 
 			#region Example 02
-			
+
 			//int[] Numbers = { 7, 6, 5, 8, 9, 4, 1, 3, 2 };
 
-			//SortingAlgorithms.BubbleSort(Numbers , SortingStrategy.CompareGreater); // To Sort In Asc
+			//SortingAlgorithms<int>.BubbleSort(Numbers, SortingStrategy.SortAsc); // To Sort In Asc
 
-			//SortingStrategyFuncDelegate? sortingStrategy = default;
+			//SortingStrategyFuncDelegate<int , int , bool>? sortingStrategy01 = SortingStrategy.SortDesc;
 
-			//SortingAlgorithms.BubbleSort(Numbers , sortingStrategy); // To Sort In Desc
+			//SortingAlgorithms<int>.BubbleSort(Numbers, sortingStrategy01); // To Sort In Desc
 
 			//foreach (int item in Numbers) Console.Write($"{item} ");
 
 			#endregion
 
+			#region Example 02 With Generics 
+
+			//string[] Names = ["Omar", "Mohamed", "Amr", "Salma"];
+
+			//SortingStrategyFuncDelegate<string ,string, bool> sortingStrategy02 = SortingStrategy.SortAsc;
+
+			//SortingAlgorithms<string>.BubbleSort(Names, sortingStrategy02);
+
+			//SortingAlgorithms<string>.BubbleSort(Names, SortingStrategy.SortDesc);
+			
+			//foreach (string item in Names) Console.Write($"{item} "); // Mohamed Salma Omar Amr
+
+			#endregion
 		}
 	}
 }
