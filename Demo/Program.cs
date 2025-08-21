@@ -1,4 +1,5 @@
 ﻿using Demo.Example01;
+using Demo.Example02;
 
 namespace Demo
 {
@@ -42,6 +43,19 @@ namespace Demo
 			//Console.WriteLine(Result); // 2 
 			#endregion
 
+			#region Example 02
+			
+			//int[] Numbers = { 7, 6, 5, 8, 9, 4, 1, 3, 2 };
+
+			//SortingAlgorithms.BubbleSort(Numbers , SortingStrategy.CompareGreater); // To Sort In Asc
+
+			//SortingStrategyFuncDelegate? sortingStrategy = default;
+
+			//SortingAlgorithms.BubbleSort(Numbers , sortingStrategy); // To Sort In Desc
+
+			//foreach (int item in Numbers) Console.Write($"{item} ");
+
+			#endregion
 
 		}
 	}
