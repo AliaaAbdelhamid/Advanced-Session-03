@@ -1,5 +1,6 @@
 ﻿using Demo.Example01;
 using Demo.Example02;
+using Demo.Example03;
 
 namespace Demo
 {
@@ -66,8 +67,34 @@ namespace Demo
 			//SortingAlgorithms<string>.BubbleSort(Names, sortingStrategy02);
 
 			//SortingAlgorithms<string>.BubbleSort(Names, SortingStrategy.SortDesc);
-			
+
 			//foreach (string item in Names) Console.Write($"{item} "); // Mohamed Salma Omar Amr
+
+			#endregion
+
+			#region Example 03 
+
+			//List<int> Numbers = Enumerable.Range(1, 100).ToList();
+
+			//List<int> OddNumbers = FilterLists.FindElements(Numbers , FiltersOfList.CheckOdd);
+
+			//FilterListFuncDelegate<int> filterList = FiltersOfList.CheckEven;
+
+			//List<int> EvenNumbers = FilterLists.FindElements(Numbers , filterList);
+
+			//List<int> NumbersDivisableBy7 = FilterLists.FindElements(Numbers , FiltersOfList.DivisibleBy7);
+
+			//foreach (int item in NumbersDivisableBy7) Console.Write($"{item} ");
+			//// 7 14 21 28 35 42 49 56 63 70 77 84 91 98
+
+
+			//List<string> Names = ["Ahmed", "Aya", "Khaled", "Rawan", "Amr", "Youssef"];
+
+			//List<string> NamesWithLengthMoreThanFour =  FilterLists.FindElements<string>(Names, FiltersOfList.CheckLengthMoreThanFour);
+		
+			//foreach (string item in NamesWithLengthMoreThanFour) Console.Write($"{item} ");
+			//// Ahmed Khaled Rawan Youssef
+
 
 			#endregion
 		}
